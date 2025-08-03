@@ -1,2 +1,4 @@
 documentportal
 .env
+document_portal.egg-info
+.vscode
