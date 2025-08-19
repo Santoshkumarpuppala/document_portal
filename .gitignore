@@ -3,3 +3,8 @@ documentportal
 document_portal.egg-info
 .vscode
 .DS_Store
+venv/
+__pycache__/
+logs/
+*.pyc
+test.py
