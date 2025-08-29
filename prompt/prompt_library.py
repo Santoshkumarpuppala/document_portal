@@ -28,4 +28,4 @@ Your response should follow this format:
 """)
 
 
-PROMPT_REGISTRY={"document_analysis": document_analysis_prompt, "document_comparison":document_comparison_prompt}
+PROMPT_REGISTRY={"document_analysis": document_analysis_prompt, "document_comparator":document_comparison_prompt}
