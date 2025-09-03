@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import pandas as pd
 from logger.custom_logger import CustomLogger
 from exception.custom_exception import DocumentPortalException
-from model.models import *
+from model.models import SummaryResponse,PromptType
 from prompt.prompt_library import PROMPT_REGISTRY
 from utils.model_loader import ModelLoader
 from langchain_core.output_parsers import JsonOutputParser
@@ -17,9 +17,9 @@ class DocumentComparatorLLM:
         self.llm = self.loader.load_llm()
         self.parser = JsonOutputParser(pydantic_object=SummaryResponse)
         self.fixing_parser = OutputFixingParser.from_llm(parser=self.parser, llm=self.llm)
-        self.prompt = PROMPT_REGISTRY["document_comparator"]
+        self.prompt = PROMPT_REGISTRY[PromptType.DOCUMENT_COMPARISON.value]
         self.chain = self.prompt | self.llm | self.parser
-        self.log.info("DocumentComparatorLLM initialized with model and parser.")
+        self.log.info("DocumentComparatorLLM initialized", model=self.llm)
 
     def compare_documents(self,combined_docs: str) -> pd.DataFrame:
         """
