@@ -6,7 +6,7 @@ from exception.custom_exception import DocumentPortalException
 
 class DocumentIngestion:
     def __init__(self, base_dir:str="data/document_compare"):
-        self.log = CustomLogger.get_logger(__name__)
+        self.log = CustomLogger().get_logger(__name__)
         self.base_dir = Path(base_dir)
         self.base_dir.mkdir(parents=True, exist_ok=True)
         
@@ -33,7 +33,7 @@ class DocumentIngestion:
             self.log.info("Existing files deleted successfully.")
 
             ref_path = self.base_dir/ refernce_file.name
-            act_path = self.base_dir/ act_path.name
+            act_path = self.base_dir/ actual_file.name
 
             if not refernce_file.name.endswith(".pdf") or not actual_file.name.endswith(".pdf"):
                 raise ValueError("Only PDF files are allowed.")
