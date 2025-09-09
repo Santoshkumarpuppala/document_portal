@@ -8,4 +8,5 @@ __pycache__/
 logs/
 *.pyc
 faiss_index
-data
+data/
+archive/
