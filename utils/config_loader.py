@@ -6,4 +6,4 @@ def load_config(config_path: str = "config/config.yaml") -> dict:
         print(config)
     return config
 
-load_config("config/config.yaml")
+load_config("/Users/santoshkumarpuppala/Documents/Learnings/Agentic AI and Gen AI/LLMOPS/Projects/Project 1 Document Portal/config/config.yaml")
