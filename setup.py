@@ -18,7 +18,7 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(exclude=["tests*", "examples*"]),
     include_package_data=True,
-    install_requires=parse_requirements("requirements.txt"),
+    install_requires=parse_requirements("requirement.txt"),
     extras_require={
         "dev": ["pytest", "pylint", "ipykernel"]
     },
