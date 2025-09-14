@@ -1,6 +1,6 @@
 documentportal
 .env
-document_portal.egg-info
+document_portal.egg-info/
 .vscode
 .DS_Store
 venv/
