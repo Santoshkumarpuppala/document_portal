@@ -145,7 +145,10 @@ flowchart TD
 
 A full screen recording of the execution flow (uploading docs, analysis, comparison, and multi-doc chat) is available:
 
-👉 [Watch the Demo Video](./assets/execution_flow.mp4)
+## 🎥 Execution Flow Recording
 
-(If hosted on YouTube or Loom, replace with the public link.)
+A full screen recording of the execution flow (uploading docs, analysis, comparison, and multi-doc chat) is available:
+
+👉 [Watch the Demo Video](https://www.youtube.com/watch?v=Tz0iJJIHnKk)
+
 
