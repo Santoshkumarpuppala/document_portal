@@ -1,14 +1,14 @@
 {
-  "family": "enterprisedocumentportalt",
+  "family": "enterprisedocumentportal",
   "networkMode": "awsvpc",
-  "executionRoleArn": "arn:aws:iam::445894898225:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::445894898225:role/ecsTaskExcecutionRole",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "1024",
   "memory": "8192",
   "containerDefinitions": [
     {
-      "name": "enterprisedocumentportal",
-      "image": "445894898225.dkr.ecr.us-east-1.amazonaws.com/enterprisedocumentportal:latest",
+      "name": "enterprise-documentportal-container",
+      "image": "445894898225.dkr.ecr.us-east-1.amazonaws.com/enterprisedocumentportal",
       "cpu": 1024,
       "essential": true,
       "portMappings": [
@@ -22,18 +22,14 @@
       ],
       "environment": [
         {
-          "name": "LANGCHAIN_PROJECT",
-          "value": "ENTERPRISE DOCUMENT PORTAL"
+          "name": "ENV",
+          "value": "production"
         }
       ],
       "secrets": [
         {
-          "name": "GROQ_API_KEY",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:445894898225:secret:api_keys-SWSTis:GROQ_API_KEY"
-        },
-        {
-          "name": "GOOGLE_API_KEY",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:445894898225:secret:api_keys-SWSTis:GOOGLE_API_KEY"
+          "name": "API_KEYS",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:445894898225:secret:api_keys-SWSTis"
         }
       ],
       "logConfiguration": {
@@ -42,9 +38,7 @@
           "awslogs-group": "/ecs/enterprisedocumentportal",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs",
-          "awslogs-create-group": "true",
-          "mode": "non-blocking",
-          "max-buffer-size": "25m"
+          "awslogs-create-group": "true"
         }
       }
     }
