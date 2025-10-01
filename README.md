@@ -51,7 +51,7 @@ git clone https://github.com/Santoshkumarpuppala/document_portal
 
 ```
 
-## 2. Minimum Requirements
+## Minimum Requirements
 
 ### LLM Models
 
